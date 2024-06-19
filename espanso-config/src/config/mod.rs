@@ -123,6 +123,9 @@ pub trait Config: Send + Sync {
   // are typed.
   fn backspace_limit(&self) -> usize;
 
+  // Maximum number of Regex characters that a match can have.
+  fn regex_limit(&self) -> usize;
+
   // If false, avoid applying the built-in patches to the current config.
   fn apply_patch(&self) -> bool;
 

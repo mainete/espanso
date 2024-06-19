@@ -351,6 +351,10 @@ impl Config for LegacyInteropConfig {
     self.config.backspace_limit.try_into().unwrap()
   }
 
+  fn regex_limit(&self) -> usize {
+    30
+  }
+
   fn apply_patch(&self) -> bool {
     true
   }

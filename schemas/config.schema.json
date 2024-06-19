@@ -65,6 +65,11 @@
             "default": 5,
             "type": "number"
         },
+        "regex_limit": {
+            "description": "Maximum number of Regex characters that a match can have.",
+            "default": 30,
+            "type": "number"
+        },
         "keyboard_layout": {
             "type": "object",
             "description": "On Wayland, overrides the auto-detected keyboard configuration (RMLVO) which is used both for the detection and injection process.",

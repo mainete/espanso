@@ -46,6 +46,7 @@ generate_patchable_config!(
   evdev_modifier_delay -> Option<usize>,
   word_separators -> Vec<String>,
   backspace_limit -> usize,
+  regex_limit -> usize,
   apply_patch -> bool,
   undo_backspace -> bool,
   post_form_delay -> usize,

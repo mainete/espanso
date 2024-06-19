@@ -37,6 +37,7 @@ pub(crate) struct ParsedConfig {
   pub disable_x11_fast_inject: Option<bool>,
   pub word_separators: Option<Vec<String>>,
   pub backspace_limit: Option<usize>,
+  pub regex_limit: Option<usize>,
   pub apply_patch: Option<bool>,
   pub search_trigger: Option<String>,
   pub search_shortcut: Option<String>,

@@ -262,6 +262,10 @@ impl Config for ResolvedConfig {
     self.parsed.backspace_limit.unwrap_or(5)
   }
 
+  fn regex_limit(&self) -> usize {
+    self.parsed.regex_limit.unwrap_or(30)
+  }
+
   fn apply_patch(&self) -> bool {
     self.parsed.apply_patch.unwrap_or(true)
   }
@@ -437,6 +441,7 @@ impl ResolvedConfig {
       evdev_modifier_delay,
       word_separators,
       backspace_limit,
+      regex_limit,
       keyboard_layout,
       search_trigger,
       search_shortcut,

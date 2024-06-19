@@ -83,6 +83,9 @@ pub(crate) struct YAMLConfig {
   pub backspace_limit: Option<usize>,
 
   #[serde(default)]
+  pub regex_limit: Option<usize>,
+
+  #[serde(default)]
   pub apply_patch: Option<bool>,
 
   #[serde(default)]
@@ -195,6 +198,7 @@ impl TryFrom<YAMLConfig> for ParsedConfig {
       evdev_modifier_delay: yaml_config.evdev_modifier_delay,
       word_separators: yaml_config.word_separators,
       backspace_limit: yaml_config.backspace_limit,
+      regex_limit: yaml_config.regex_limit,
       apply_patch: yaml_config.apply_patch,
       keyboard_layout: yaml_config.keyboard_layout.map(|mapping| {
         mapping
@@ -272,6 +276,7 @@ mod tests {
     evdev_modifier_delay: 40
     word_separators: ["'", "."]
     backspace_limit: 10
+    regex_limit: 30
     apply_patch: false
     keyboard_layout:
       rules: test_rule
@@ -337,6 +342,7 @@ mod tests {
         inject_delay: Some(10),
         key_delay: Some(20),
         backspace_limit: Some(10),
+        regex_limit: Some(30),
         apply_patch: Some(false),
         keyboard_layout: Some(keyboard_layout),
         search_trigger: Some("search".to_owned()),
